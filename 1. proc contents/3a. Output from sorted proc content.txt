@@ -1,0 +1,11 @@
+* If a dataset is sorted and u take its proc content it, you can know it from two vars sorted (1-yes, 0-no) and sorted by stores value 1 againts the key variable;
+
+
+
+proc sort data=sasuser.admit out=admit; by id; run;                                                                                                                                                                                                                        
+proc contents data=admit out=x (keep= name sorted sortedby) noprint; run;
+
+proc print data=x;
+where sortedby ne .;
+run;
+ 

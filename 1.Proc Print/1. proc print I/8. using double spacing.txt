@@ -1,0 +1,7 @@
+* The use of double spacing in the listing output between the rows;
+proc print data=admit double;
+var age sex height fee name;
+where name ? 'er';
+sum fee ;
+run;
+

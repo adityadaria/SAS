@@ -1,0 +1,4 @@
+*proc print command and useof var statement;
+proc print data=admit;
+var age sex height;
+run;

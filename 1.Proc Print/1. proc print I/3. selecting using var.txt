@@ -1,0 +1,6 @@
+*How to select the desired variables for printing, the use of the var keyword ;
+
+proc print data=admit;
+var age sex height fee;
+sum fee ;
+run;

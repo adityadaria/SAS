@@ -1,0 +1,22 @@
+* How to select the desired variables for printing  without default obs column;
+
+proc print data=admit noobs;
+var age sex height fee;
+sum fee ;
+run;
+
+
+***************************************
+* this no obs gives the total no of observations N=X and shows the obs column too;
+proc print data=sasuser.admit no obs;
+var age sex height fee;
+sum fee ;
+run;
+
+
+**same can be achieved by N;
+
+proc print data=sasuser.admit N;
+var age sex height fee;
+sum fee ;
+run;

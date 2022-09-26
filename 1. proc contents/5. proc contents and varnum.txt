@@ -1,0 +1,48 @@
+* The varnum option helps in sorting the variables in the order they are created or you can say the order in which they exist in a dataset, as the order of creation is the same as the order of existence;
+
+proc contents data=sasuser.admit varnum;
+run;
+
+
+                                                            The SAS System                           19:46 Saturday, March 6, 2011   7
+
+                                                        The CONTENTS Procedure
+
+                        Data Set Name        SASUSER.ADMIT                            Observations          21
+                        Member Type          DATA                                     Variables             9
+                        Engine               V9                                       Indexes               0
+                        Created              Friday, January 09, 2004 11:05:52 PM     Observation Length    64
+                        Last Modified        Friday, February 20, 2004 01:11:20 PM    Deleted Observations  0
+                        Protection                                                    Compressed            NO
+                        Data Set Type                                                 Sorted                NO
+                        Label
+                        Data Representation  WINDOWS_32
+                        Encoding             wlatin1  Western (Windows)
+
+
+                                                  Engine/Host Dependent Information
+
+               Data Set Page Size          8192
+               Number of Data Set Pages    2
+               First Data Page             1
+               Max Obs per Page            127
+               Obs in First Data Page      21
+               Number of Data Set Repairs  0
+               File Name                   C:\Documents and Settings\Amit\My Documents\My SAS Files\9.1\admit.sas7bdat
+               Release Created             9.0101M3
+               Host Created                XP_PRO
+
+
+                                                      Variables in Creation Order
+
+                                                #    Variable    Type    Len    Format
+
+                                                1    ID          Char      4
+                                                2    Name        Char     14
+                                                3    Sex         Char      1
+                                                4    Age         Num       8
+                                                5    Date        Num       8
+                                                6    Height      Num       8
+                                                7    Weight      Num       8
+                                                8    ActLevel    Char      4
+                                                9    Fee         Num       8    7.2

@@ -1,0 +1,25 @@
+* the by group is based on actlevel, and then the pageby option prints the data by that actlevel by group; 
+
+proc sort data=sasuser.admit out=admit;                                                                                                 
+by actlevel;                                                                                                                            
+run;                                                                                                                                    
+                                                                                                                                        
+proc print data=admit;                                                                                                                  
+var age sex height;                                                                                                                     
+by actlevel;                                                                                                                            
+pageby actlevel;                                                                                                                        
+                                                                                                                                        
+run;
+
+
+****************************************************************************
+proc sort data=sasuser.admit out=admit;                                                                                                 
+by id;                                                                                                                            
+run;                                                                                                                                    
+                                                                                                                                        
+proc print data=admit;                                                                                                                  
+var age sex height; 
+by id;                                                                                                                    
+pageby id;                                                                                                                        
+                                                                                                                                        
+run;

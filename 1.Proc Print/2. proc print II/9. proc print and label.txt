@@ -1,0 +1,8 @@
+*using the label option you can assign the temporary label to a variable, it is only for the procprint step
+, ie only for the listing output but does not change the data values; however if you use the option in the datastep then the label is permanently assigned;
+
+
+proc print data=sasuser.admit label split='.';
+var age height sex;
+label age='total age jkb.vhhhhhhhhhhhhhhhhhhhh'; 
+run;

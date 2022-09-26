@@ -1,0 +1,35 @@
+* The use of title in the listing output, title or title1 is the same;
+
+title1 'my first sasprogram';
+title3 'isnt it great';
+proc print data=admit;
+var age sex height fee name;
+where name ? 'er';
+sum fee ;
+run;
+
+**************************************
+* CTM the output I had put a space in title and 3, compare the output with above program, actually the title b 3 acts to nullify the title1 and thus gets printed;
+
+title1 'my first sasprogram';
+title 3 'isnt it great';
+proc print data=admit;
+var age sex height fee name;
+where name ? 'er';
+sum fee ;
+run;
+
+
+
+**********************OUTPUT   3 isnt it great***************************;
+#########################################################################################################
+
+* If I give title1 and then title7 then it would print six blank spaces; 
+
+title1 'my first sasprogram';
+title7 'isnt it great';
+proc print data=admit;
+var age sex height fee name;
+where name ? 'er';
+sum fee ;
+run;

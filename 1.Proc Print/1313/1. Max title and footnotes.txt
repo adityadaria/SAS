@@ -1,0 +1,6 @@
+**You can have max of 10 titles and footnotes in as SAS program;
+
+proc print data =sasuser.admit;
+title1 "No 1";
+title10 "No 10 is max";
+run;

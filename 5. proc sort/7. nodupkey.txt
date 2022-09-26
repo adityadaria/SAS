@@ -1,0 +1,36 @@
+* The nodupkey works on the sorting key;
+
+data x;
+input id name $;
+datalines;
+
+1 a
+2 b
+2 b
+3 a
+4 m
+4 j
+5 k
+;
+run;
+
+proc sort data=x out=x_sorted nodupkey;
+by id;
+run;
+
+proc print data=x_sorted;
+run;
+
+
+
+
+                                                   The SAS System                       22:05 Wednesday, April 14, 2011   4
+
+                                                        Obs    id    name
+
+                                                         1      1     a
+                                                         2      2     b
+                                                         3      3     a
+                                                         4      4     m
+                                                         5      5     k
+        

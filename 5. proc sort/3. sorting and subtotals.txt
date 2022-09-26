@@ -1,0 +1,24 @@
+* For getting subtotals the dataset need to be sorted by the same by variable;
+proc sort data=sasuser.admit out=admit;
+by actlevel;
+run;
+
+proc print data=admit;
+var age sex height;
+id name;
+sum fee;
+by actlevel;
+run;
+************************************************************
+* If you use id actlevel then actlevel heading just comes once as compared to above program;
+proc sort data=sasuser.admit out=admit;
+by actlevel;
+run;
+
+proc print data=admit;
+var age sex height;
+id actlevel;
+sum fee;
+by actlevel;
+
+run;

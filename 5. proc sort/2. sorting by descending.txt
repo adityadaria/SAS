@@ -1,0 +1,16 @@
+* using the descending for sorting;
+proc sort data=sasuser.admit out=admit;
+by descending age;
+run;
+
+proc print data=admit;
+run;
+
+* if you use two variables for descending sort it just applies to the one next to descending key word, so the output would be desc age and asc weight, if there is any group and two values have same age then higher weight would come first;
+
+proc sort data=sasuser.admit out=admit;
+by descending age weight;
+run;
+
+proc print data=admit;
+run;

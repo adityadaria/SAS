@@ -1,0 +1,5 @@
+* The output from a proc content can be obtaines using the out keyword and if you do not want the print out use the noprint statement, you can use the various SAS options to take care of the variables that you want in the output dataset;
+
+proc contents data=sasuser.admit noprint out=admit (keep=memname name type);run; 
+
+

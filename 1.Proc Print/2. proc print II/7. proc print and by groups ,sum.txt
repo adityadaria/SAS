@@ -1,0 +1,10 @@
+*proc print command and useof by grouping, it prints the data forming groups by sex;
+proc sort data=admit;
+by sex;
+run;
+
+proc print data=admit;
+var age sex height;
+sum age;
+by sex;
+run;

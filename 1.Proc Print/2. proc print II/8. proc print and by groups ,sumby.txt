@@ -1,0 +1,9 @@
+*the sumby statement calculates sum of all numeric variables and displays in output window;
+proc sort data=sasuser.admit;
+by sex;
+run;
+
+proc print data=sasuser.admit;
+by sex;
+sumby sex;
+run;

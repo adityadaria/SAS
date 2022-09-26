@@ -1,0 +1,11 @@
+* To get the sum total for a specified column, you can use the sum keyword;
+proc print data=sasuser.admit;
+sum fee;
+run;
+
+**************************************************;
+
+* To get the sum total for more than one specified columns;
+proc print data=sasuser.admit;
+sum fee weight;
+run;

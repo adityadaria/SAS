@@ -1,0 +1,5 @@
+*proc print command and useof var statement, this makes the id variablle as the identifies of every row;
+proc print data=admit;
+var age sex height;
+id id;
+run;

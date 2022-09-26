@@ -1,0 +1,12 @@
+*if there is any aggregate function then the data is calculted group wise, here sum is calculted sex wise;
+
+proc sort data=sasuser.admit out=xx;                                                                                                    
+by sex;                                                                                                                                                                                                                                                   
+run;                                                                                                                                    
+                                                                                                                                        
+proc print data=xx;
+
+sum fee;
+by sex;
+run;                                                                                                                
+                           

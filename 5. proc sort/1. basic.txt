@@ -1,0 +1,37 @@
+*using the basic structure;
+proc sort data=sasuser.admit out=admit;
+by age;
+run;
+
+* using two variables for sorting, always remember the concept of the PDV and the data would be sorted first by age then by height, if two values have same age then height gets prefference;
+proc sort data=sasuser.admit out=admit;
+by age height;
+run;
+
+eg...
+
+data amit;                                                                                                                              
+input name $ age;                                                                                                                       
+datalines;                                                                                                                              
+amit 56                                                                                                                                 
+anit 67                                                                                                                                 
+anit 70                                                                                                                                 
+;                                                                                                                                       
+run;                                                                                                                                    
+proc sort data=amit out=a;                                                                                                              
+by name descending age;                                                                                                                 
+run;                                                                                                                                    
+    so the data first gets sorted by ascending name, and then by dec age...going by this funda amit comes first and its age also,then anit and anit now as both have same name then the age gets preff by desc order.
+
+
+so the final output is...                                                                                                                                    
+amit 56
+anit 70
+anit 67
+
+
+*****************efficient*******************;
+
+proc sort data=sasuser.admit (keep=name age)  out=xx;                                                                                   
+by age;                                                                                                                                 
+run;

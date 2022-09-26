@@ -1,0 +1,11 @@
+* The output from a proc content of a library can be fed into a dataset, do not try using nods here;
+
+proc contents data=sasuser._all_ out=x noprint;
+run;
+
+
+*If you just want the datasets;
+
+
+proc contents data=sasuser._all_ memtype=data out=x noprint;
+run;

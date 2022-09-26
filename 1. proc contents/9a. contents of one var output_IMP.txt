@@ -1,0 +1,14 @@
+* You can take the contents of one var too or more than one var as output;
+
+proc contents data=sasuser.admit (keep=name id) out=xx noprint;
+run;
+
+
+
+
+
+
+************The above one is diff from this one, jut try to understand***********;
+
+proc contents data=sasuser.admit  out=xx (keep=name id) noprint;                                                                        
+run;

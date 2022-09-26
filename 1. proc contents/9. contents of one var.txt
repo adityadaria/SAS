@@ -1,0 +1,4 @@
+* You can take the contentsof one var too;
+
+proc contents data=sasuser.admit (keep=name);
+run;

@@ -1,0 +1,33 @@
+*The dupout option is used to pick the duplicates from a dataset and can be used with no dup and nodupkey, basically the observation that gets deleted using the nodup option are being output here;
+
+data x;
+input id name $;
+datalines;
+
+1 a
+2 b
+2 b
+2 b
+3 a
+4 m
+4 j
+5 k
+;
+run;
+
+proc sort data=x dupout=x_dupkey nodupkey;
+by id;
+run;
+
+proc print data=x_dupkey;
+run;
+
+
+
+                                                          The SAS System                       22:05 Wednesday, April 14, 2011   7
+
+                                                        Obs    id    name
+
+                                                         1      2     b
+                                                         2      2     b
+                                                         3      4     j

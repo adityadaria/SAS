@@ -1,0 +1,11 @@
+*proc print command and useof by grouping, it prints the data forming groups by sex;
+proc sort data=sasuser.admit;
+by sex;
+run;
+
+proc print data=sasuser.admit;
+var age sex height;
+id name;
+by sex;
+pageby sex;
+run;

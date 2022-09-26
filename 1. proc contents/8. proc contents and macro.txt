@@ -1,0 +1,67 @@
+* lets design a macro using the proc contents, our aim here is to copy only datasets admit and acities
+to work,and set to datasets with name of a1 and a2;
+
+
+
+options mprint mlogic symbolgen;
+
+proc contents data=sasuser._all_  out=x memtype=data noprint;
+run;
+
+proc sort data=x;
+by memname name;
+run;
+
+data x1;
+set x;
+by memname name;
+if first.memname;
+where upcase(memname) in ('ADMIT', 'ACITIES');
+run;
+
+
+data _null_;
+set x1 end=last;
+call symput ('DS'||left(_n_), trim(memname));
+if last then call symput ('total', left(_n_));
+%put _user_;
+run;
+
+%macro cpy;
+%do i=1 %to &total;
+data a&i;
+set sasuser.&&DS&i;
+run;
+%end;
+%mend cpy;
+
+%cpy;
+
+
+  
+
+
+******my approach******************;
+
+%macro c;
+
+proc contents data=sasuser._all_ out=x noprint;
+run;
+
+proc sql noprint;
+select distinct memname into: naam separated by ' ' from x where compress(upcase(memname))="ADMIT" or
+compress(upcase(memname))="ACITIES";
+quit;
+
+%do i=1 %to 2;
+
+%let name=%scan(&naam,&i,' ');
+
+data a&i;
+set sasuser.&name;
+run;
+
+%end;
+%mend c;
+
+%c;

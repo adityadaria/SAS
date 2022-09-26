@@ -1,0 +1,19 @@
+* The another way of cancelling title is using a null title statement or by just title1;
+
+title1 'my first sasprogram';
+title3 'isnt it great';
+proc print data=sasuser.admit;
+var age sex height fee name;
+where name ? 'er';
+sum fee ;
+run;
+
+
+* the below program cancels the effect of title1 and title2;
+title;
+proc print data=sasuser.admit;
+var age sex height fee name;
+where name ? 'er';
+sum fee ;
+run;
+

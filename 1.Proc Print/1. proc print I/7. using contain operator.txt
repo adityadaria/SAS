@@ -1,0 +1,7 @@
+* The use of contain operator for filtering the data;
+proc print data=admit;
+var age sex height fee name;
+where name ? 'er';
+sum fee ;
+run;
+

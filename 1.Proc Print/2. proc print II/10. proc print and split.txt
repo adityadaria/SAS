@@ -1,0 +1,15 @@
+*using the split option helps you to split the lable to second line, if the specified character specified against the split keyword appears;
+
+
+
+proc print data=sasuser.admit label split='.';
+var age height sex;
+label age='total age jkb.vhhhhhhhhhhhhhhhhhhhh'; 
+run;
+
+******************************;
+
+proc print data=sasuser.admit split='*';                                                                                              
+ var age height sex;                                                                                                                     
+ label age='the new age * years';                                                                                                        
+run;

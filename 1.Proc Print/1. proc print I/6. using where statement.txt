@@ -1,0 +1,7 @@
+* The use of where statement is to filter the observations;
+proc print data=admit;
+var age sex height fee;
+where age gt 30;
+sum fee ;
+run;
+

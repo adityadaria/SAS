@@ -1,0 +1,3 @@
+*the simple proc print command that prints the data listing, with time, date , day, default tile, obs no and page number;
+proc print data=admit;
+run;

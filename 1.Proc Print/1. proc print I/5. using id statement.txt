@@ -1,0 +1,12 @@
+* The id statement basicallly replaces the obs column with the specified variable against the id keyword;
+proc print data=admit;
+var age sex height fee;
+id name;
+sum fee ;
+run;
+
+* If you specify two vars in the id statement then those two vars replace the obs columns and proc print of data is also displayed.;
+
+proc print data=sasuser.admit;
+id name age height;
+run;

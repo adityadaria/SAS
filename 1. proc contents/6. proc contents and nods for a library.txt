@@ -1,0 +1,189 @@
+ /* How to use the proc content for a library REMEMBER to give a space after _all_ and nods
+, aslo remember that nodetails or NODS (no details) can only be used if you are definig _all_, ie all the
+datasets of the library are requested.Basicaly the _all_ is to reference all the datasets*/                                                                                         
+                                                                                                                                        
+ 
+proc contents data=sasuser._all_ nodetails;   /* it is same as proc contents of all the datasets of the libary*/
+run;    
+
+
+* or alternatively the output from both the programs is diff, 
+the above one is gives more elaborate output then below one;
+
+                                                                                                                                                                                                                                          
+proc contents data=sasuser._all_ nods;
+run;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+
+                                                            The SAS System                           19:46 Saturday, March 6, 2011  40
+
+                                                        The CONTENTS Procedure
+
+                                                              Directory
+
+                             Libref         SASUSER
+                             Engine         V9
+                             Physical Name  C:\Documents and Settings\Amit\My Documents\My SAS Files\9.1
+                             File Name      C:\Documents and Settings\Amit\My Documents\My SAS Files\9.1
+
+
+                                                         Member       File
+                                #  Name                  Type         Size  Last Modified
+
+                                1  ACITIES               DATA        13312  09Jan11:23:05:54
+                                2  ADMIT                 DATA        17408  20Feb11:13:11:20
+                                3  ADMITJUNE             DATA         9216  09Jan11:23:05:52
+                                4  ADVERSE               DATA       394240  03Sep10:22:59:59
+                                5  ADXBK8                CATALOG     78848  11Jun10:21:44:19
+                                6  ADXBK9                CATALOG    107520  11Jun10:21:44:19
+                                7  ADXBOOK               CATALOG     78848  11Jun10:21:44:19
+                                8  ADXPARM               CATALOG     21504  11Jun10:21:44:53
+                                9  AIRPORTS              DATA        13312  09Jan11:23:05:54
+                               10  ALL                   VIEW         9216  09Jan11:23:05:56
+                               11  ALLEMPS               DATA         9216  09Jan11:23:05:54
+                               12  A_CDARS               DATA         5120  02Oct10:08:00:59
+                               13  BEVERAGE              DATA         9216  11Jun10:21:46:14
+                               14  BODY                  DATA        62464  11Jun10:21:46:14
+                               15  CAP2000               DATA         9216  09Jan11:23:05:54
+                               16  CAP2001               DATA         9216  09Jan11:23:05:54
+                               17  CAPACITY              DATA         9216  09Jan11:23:05:54
+                               18  CAPINFO               DATA         9216  09Jan11:23:05:54
+                               19  CARGO99               DATA        17408  09Jan11:23:05:55
+                                   CARGO99               INDEX        9216  09Jan11:23:05:55
+                               20  CARGOREV              DATA         5120  09Jan11:23:05:54
+                               21  CARPREF               DATA        17408  11Jun10:21:46:13
+                               22  CARS                  DATA        50176  11Jun10:21:46:13
+                               23  CHEESE                DATA         5120  11Jun10:21:46:13
+                               24  CHOCS                 DATA         9216  11Jun10:21:46:14
+                               25  CITY                  DATA         9216  11Jun10:21:46:14
+                               26  CNTAINER              DATA         5120  17Jun10:22:22:05
+                               27  COMPANY               DATA         5120  09Jan11:23:05:52
+                               28  COMPETE               DATA         5120  09Jan11:23:05:55
+                               29  CONDRUG               DATA       394240  03Sep10:22:59:59
+                               30  CONTRIB               DATA         5120  09Jan11:23:05:55
+                               31  COURSES               DATA         5120  09Jan11:23:05:56
+                               32  CREDIT                DATA         5120  09Jan11:23:05:52
+                               33  CTARGETS              DATA        13312  09Jan11:23:05:55
+                               34  CUSTDET1              DATA       771072  11Jun10:21:45:18
+                               35  DEMOG                 DATA       148480  03Sep10:22:59:59
+                               36  DIABETES              DATA         9216  09Jan11:23:05:52
+                               37  DMDATA                CATALOG     33792  11Jun10:21:45:49
+                               38  DNUNDER               DATA         5120  09Jan11:23:05:55
+                               39  ECONTRIB              DATA         5120  09Jan11:23:05:55
+                               40  EIS                   CATALOG     33792  17Jun10:22:23:02
+                               41  EMPDATA               DATA        33792  09Jan11:23:05:55
+                                   EMPDATA               INDEX        9216  09Jan11:23:05:55
+                               42  EMPDATU               DATA        17408  09Jan11:23:05:55
+                               43  EMPDATU2              DATA        17408  09Jan11:23:05:55
+                               44  EUROPE                DATA        13312  09Jan11:23:05:52
+                               45  EXPENSES              DATA         9216  09Jan11:23:05:55
+                               46  FINAL                 DATA       148480  03Sep10:22:59:59
+                               47  FINANCE               DATA         5120  09Jan11:23:05:52
+                               48  FLIGHTATTENDANTS      DATA         5120  09Jan11:23:05:53
+
+                                                            The SAS System                           19:46 Saturday, March 6, 2011  41
+
+                                                        The CONTENTS Procedure
+
+                                                         Member       File
+                                #  Name                  Type         Size  Last Modified
+
+                               49  FLIGHTDELAYS          DATA        50176  09Jan11:23:05:53
+                               50  FLIGHTS               DATA         5120  09Jan11:23:05:55
+                               51  FLIGHTS2              DATA         5120  09Jan11:23:05:55
+                               52  FLIGHTSCHEDULE        DATA         9216  09Jan11:23:05:53
+                               53  FLIGHTTIMES           DATA         5120  09Jan11:23:05:55
+                               54  FOLDER                CATALOG     46080  17Jun10:22:22:24
+                               55  FREQUENTFLYERS        DATA        37888  09Jan11:23:05:53
+                               56  FUNDDRIVE             DATA         5120  09Jan11:23:05:52
+                               57  GNG                   CATALOG     99328  15Jun10:23:01:16
+                               58  HEART                 DATA         9216  09Jan11:23:05:52
+                               59  INSURE                DATA         9216  09Jan11:23:05:52
+                               60  INTERNATIONALFLIGHTS  DATA         9216  09Jan11:23:05:53
+                               61  JCODEDAT              DATA         9216  09Jan11:23:05:55
+                               62  JOBHSTRY              DATA         5120  09Jan11:23:05:55
+                               63  LAGUARDIA             DATA         9216  09Jan11:23:05:52
+                               64  LOANS                 DATA         5120  09Jan11:23:05:52
+                               65  LT                    DATA        82944  03Sep10:22:59:59
+                               66  MARCHFLIGHTS          DATA        66560  09Jan11:23:05:53
+                               67  MEALPLAN              DATA         5120  09Jan11:23:05:55
+                               68  MECHANICS             DATA         9216  09Jan11:23:05:53
+                               69  MECHANICSLEVEL1       DATA         5120  09Jan11:23:05:53
+                               70  MECHANICSLEVEL2       DATA         5120  09Jan11:23:05:53
+                               71  MECHANICSLEVEL3       DATA         5120  09Jan11:23:05:53
+                               72  MEGHMAYA              DATA         9216  06Jun10:09:34:50
+                               73  MONTHSUM              DATA         5120  09Jan11:23:05:55
+                               74  MRRGSTRY              DATA         9216  17Jun10:22:22:05
+                               75  NAVIGATORS            DATA         9216  09Jan11:23:05:53
+                               76  NEWADMIT              DATA         9216  09Jan11:23:05:52
+                               77  NEWCGNUM              DATA         9216  09Jan11:23:05:55
+                               78  NEWEMPS               DATA         9216  09Jan11:23:05:55
+                               79  NEWRTNUM              DATA         5120  09Jan11:23:05:55
+                               80  NEWSALS               DATA         5120  09Jan11:23:05:55
+                               81  NEWTIMES              DATA         5120  09Jan11:23:05:55
+                               82  PARMS                 CATALOG     17408  08Aug10:17:51:55
+                               83  PAYROLLCHANGES        DATA         5120  09Jan11:23:05:53
+                               84  PAYROLLMASTER         DATA         9216  09Jan11:23:05:53
+                               85  PHDS                  DATA         9216  11Jun10:21:46:13
+                               86  PILOTEMP              DATA        17408  09Jan11:23:05:55
+                               87  PILOTS                DATA         9216  09Jan11:23:05:53
+                               88  PMPARM                DATA        17408  10Jun10:23:57:01
+                               89  PMREPORT              DATA        50176  10Jun10:23:57:01
+                               90  PREVDIS               DATA       197632  03Sep10:22:59:59
+                               91  PRICE                 DATA        25600  11Jun10:21:46:14
+                               92  PROFILE               CATALOG     95232  06Mar11:21:02:11
+                               93  PROFILE2              CATALOG     17408  06Mar11:19:46:15
+                               94  PROJDICT              DATA        33792  10Jun10:23:56:49
+                               95  QUARTER2              DATA         9216  09Jan11:23:05:55
+                               96  QUARTER3              DATA         9216  09Jan11:23:05:55
+                               97  QUARTER4              DATA         9216  09Jan11:23:05:55
+                               98  RANDOM                DATA        74752  03Sep10:22:59:59
+                               99  RAWDATA               DATA         5120  09Jan11:23:05:55
+                              100  RECORDS               DATA         5120  09Jan11:23:05:52
+                              101  REGISTER              DATA        21504  09Jan11:23:05:56
+                              102  REGSTRY               ITEMSTOR    25600  06Mar11:19:46:14
+                              103  REPERTORY             DATA         9216  09Jan11:23:05:52
+                              104  REVENUE               DATA        13312  09Jan11:23:05:55
+                              105  SALCOMPS              DATA        13312  09Jan11:23:05:55
+                              106  SALE2000              DATA        37888  09Jan11:23:05:55
+
+                                                            The SAS System                           19:46 Saturday, March 6, 2011  42
+
+                                                        The CONTENTS Procedure
+
+                                                         Member       File
+                                #  Name                  Type         Size  Last Modified
+
+                              107  SASMBC                DATA        37888  11Jun10:21:47:13
+                                   SASMBC                INDEX       13312  11Jun10:21:47:13
+                              108  SCHEDULE              DATA         5120  09Jan11:23:05:56
+                              109  STAFF                 DATA         5120  09Jan11:23:05:53
+                              110  STAFFCHANGES          DATA         9216  09Jan11:23:05:53
+                              111  STAFFMASTER           DATA        17408  09Jan11:23:05:53
+                              112  STRESS2               DATA         9216  09Jan11:23:05:52
+                              113  STRESS98              DATA         9216  09Jan11:23:05:52
+                              114  STRESS99              DATA         9216  09Jan11:23:05:52
+                              115  STRESSTEST            DATA         9216  09Jan11:23:05:52
+                              116  STUDENTS              DATA        25600  09Jan11:23:05:56
+                              117  SUPERVISORS           DATA         5120  09Jan11:23:05:53
+                              118  SURVEY                DATA        13312  09Jan11:23:05:52
+                              119  TALENT                DATA        17408  09Jan11:23:05:52
+                              120  TARGET                DATA        13312  09Jan11:23:05:55
+                              121  TEATASTE              DATA        13312  11Jun10:21:46:14
+                              122  TEMP                  DATA         9216  31Oct10:23:17:27
+                              123  TEMPLAT               ITEMSTOR    17408  12May10:00:15:49
+                              124  TEST                  DATA         5120  03Sep10:22:59:59
+                              125  TESTDRUG              DATA       148480  03Sep10:22:59:59
+                              126  THERAPY               DATA         5120  09Jan11:23:05:52
+                              127  THERAPY1999           DATA         5120  09Jan11:23:05:52
+                              128  THERAPY2000           DATA         5120  09Jan11:23:05:52
+                              129  TIRES                 DATA        13312  11Jun10:21:46:14
+                              130  TOTALS2000            DATA         5120  09Jan11:23:05:52
+                              131  USPOP                 DATA         9216  11Jun10:21:46:14
+                              132  WCHILL                DATA         9216  09Jan11:23:05:55
+                              133  WESTAUST              DATA        13312  09Jan11:23:05:55
+                              134  Y2000                 DATA         9216  09Jan11:23:05:55
+                              135  Y200061               DATA         5120  09Jan11:23:05:55
+                              136  Y200062               DATA         5120  09Jan11:23:05:56
+                              137  YEAR2000              DATA         9216  09Jan11:23:05:55
+                              138  _FACTORS              DATA        17408  11Jun10:21:44:40
+                              139  _RSPONSE              DATA         9216  11Jun10:21:44:40

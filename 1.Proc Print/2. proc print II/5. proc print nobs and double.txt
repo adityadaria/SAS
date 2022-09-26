@@ -1,0 +1,6 @@
+*proc print command and use of double spacing and the noobs option ;
+
+proc print data=admit double noobs;
+var age sex height;
+id name;
+run;
