@@ -1,3 +1,0 @@
-*The basic print command for the listing of dataset;
-proc print data=admit;
-run;
