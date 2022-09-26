@@ -1,0 +1,19 @@
+* Theoptions firstobs and obs can also be applied can also be applied;
+
+data x;
+set sasuser.admit(firstobs=10 obs=12);
+run;
+
+proc print data=x;
+run;
+
+
+
+                                                          The SAS System                       20:36 Tuesday, October 26, 2011   6
+
+                                                                                              Act
+                    Obs     ID         Name        Sex    Age    Date    Height    Weight    Level        Fee
+
+                     1     2568    Eberhardt, S     F      49     27       64        172     LOW       124.80
+                     2     2571    Nunnelly, A      F      44     19       66        140     HIGH      149.75
+                     3     2572    Oberon, M        F      28     17       62        118     LOW        85.20

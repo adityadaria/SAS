@@ -1,0 +1,86 @@
+* The one to one reading is simply like merge statement, where the second dataset replaces the values of the first one and the merged dataset contains the no. of obs contained in dataset having the smallest no of observations
+
+
+From the PDV perspective it happens as the EOF marker comes and the observations are not processed beyond that;
+
+data amit;
+input name $ age;
+datalines;
+amit 56
+cheeku 67
+ani 45
+nai 78
+;
+run;
+
+
+data amit1;
+input name $ marks;
+datalines;
+kin 67
+nin 78
+
+;
+run;
+
+data x;
+set amit;
+set amit1;
+run;
+
+proc print data=x;
+run;
+
+
+                                                          The SAS System                       19:53 Tuesday, October 26, 2011   1
+
+                                                   Obs    name    age    marks
+
+                                                    1     kin      56      67
+                                                    2     nin      67      78
+
+
+
+
+*******************Lets say amit has 2 obs and amit1 has 4, then the common obs are replaced by the dataset b, but total no of observations are from 
+dataset a only; 
+
+
+data amit;
+input name $ marks;
+datalines;
+kin 67
+nin 78
+
+;
+run;
+
+data amit1;
+input name $ age;
+datalines;
+amit 56
+cheeku 67
+ani 45
+nai 78
+;
+run;
+
+
+
+
+data x;
+set amit;
+set amit1;
+run;
+
+proc print data=x;
+run;
+
+
+
+                                                          The SAS System                       20:28 Tuesday, October 26, 2011   1
+
+                                                  Obs     name     marks    age
+
+                                                   1     amit        67      56
+                                                   2     cheeku      78      67

@@ -1,0 +1,22 @@
+* The use of the file statement to write to an external .txt file,
+
+
+libname g '\\mc1lecfs01.lec.lilly.com\ads.grp$\ADS\Programs\TCS_ADS_STD\V27 Scales\GAI_New\LMT';
+
+filename women '\\mc1lecfs01.lec.lilly.com\ads.grp$\ADS\Programs\TCS_ADS_STD\V27 Scales\GAI_New\LMT\women.txt';
+
+data class;
+   input name $ sex $ age;
+ file women;
+   if upcase(sex)='F' then
+      put name age;
+
+   datalines;
+MOORE M 15
+JOHNSON F 16
+DALY F 14
+ROBERTS M 14
+PARKER F 13
+;
+  
+run;

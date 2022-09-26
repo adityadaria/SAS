@@ -1,0 +1,14 @@
+/* How to recall a physical file*/                                                                                                      
+                                                                                                                                        
+Data test;                                                                                                                              
+                                                                                                                                        
+filename myfile 'C:\cheeku\1.txt';                                                                                                      
+                                                                                                                                        
+infile myfile;                                                                                                                          
+                                                                                                                                        
+input name $ marks age;                                                                                                                 
+                                                                                                                                        
+run;                                                                                                                                    
+                                                                                                                                        
+proc print data= test;                                                                                                   
+run;

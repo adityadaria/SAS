@@ -1,0 +1,9 @@
+* The nobs option can be used to find out the number of observations in the compile time only;
+
+
+DATA _null_;                                                                                                                            
+PUT count ;                                                                                                                             
+STOP;                                                                                                                                   
+IF 1 = 0 THEN                                                                                                                           
+SET sasuser.admit NOBS=count;                                                                                                           
+RUN;

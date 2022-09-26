@@ -1,0 +1,27 @@
+* By concatenating datasets we mean making a union of both the datasets, the newly formed dataset have all the obs and vars of the individual datasets,
+the other vars take the missing value in the newly formed dataset;
+
+
+data amit;
+input name $ age;
+datalines;
+amit 56
+cheeku 67
+ani 45
+nai 78
+;
+run;
+
+
+data amit1;
+input name $ marks;
+datalines;
+kin 67
+nin 78
+ben 71
+;
+run;
+
+data concaten;
+set amit amit1;
+run;

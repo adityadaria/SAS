@@ -1,0 +1,105 @@
+* if the length of the var is not same, then there would be ome trunctaion in the final product;
+
+data a;
+length name $3;
+input name $ age;
+datalines;
+kana 2
+nana 3
+;
+run;
+
+
+data b;
+
+input name $ age;
+datalines;
+aakanaaa 2
+aananasss 3
+;
+run;
+
+data x;
+merge a b;
+by name;
+run;
+
+
+
+
+proc print data=x;
+run;
+
+26   * if the length of the var is not same, then there would be ome trunctaion in the final product;
+27
+28   data a;
+29   length name $3;
+30   input name $ age;
+31   datalines;
+
+NOTE: The data set WORK.A has 2 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+34   ;
+35   run;
+36
+37
+38   data b;
+39
+40   input name $ age;
+41   datalines;
+
+NOTE: The data set WORK.B has 2 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+44   ;
+45   run;
+46
+47   data x;
+48   merge a b;
+49   by name;
+50   run;
+
+WARNING: Multiple lengths were specified for the BY variable name by input data sets. This may cause unexpected results.
+NOTE: There were 2 observations read from the data set WORK.A.
+NOTE: There were 2 observations read from the data set WORK.B.
+NOTE: The data set WORK.X has 4 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.23 seconds
+      cpu time            0.03 seconds
+
+
+51
+52
+53
+54
+55   proc print data=x;
+56   run;
+
+NOTE: There were 4 observations read from the data set WORK.X.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+
+
+
+
+
+                                                            The SAS System                       07:18 Saturday, December 18, 2010   2
+
+                                                          Obs    name    age
+
+                                                           1     aak      2
+                                                           2     aan      3
+                                                           3     kan      2
+                                                           4     nan      3
+
+

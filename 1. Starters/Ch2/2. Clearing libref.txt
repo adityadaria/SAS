@@ -1,0 +1,12 @@
+* The libname could be cleared using the clear keyword;
+
+libname am "D:\amit";
+
+libname am clear;
+
+
+
+
+libname am "D:\amit";
+
+libname am clear;

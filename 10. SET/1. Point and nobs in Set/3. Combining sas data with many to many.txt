@@ -1,0 +1,36 @@
+*In order to combine the data wit hmany  many relationship ;
+
+* below is the data of patient's in and out admission dates;
+
+data adm;
+input id in out;
+cards;
+1 15 18
+1 20 25
+2 23 25
+;
+run;
+
+
+* below is the data of patient's insurer, now I want that for every admission event I should have the insurer name in front;
+
+data ins;
+input id insu$;
+cards;
+1 AIG
+1 AVIVA
+1 LIC
+2 AVIVA
+2 LIC
+
+;
+run;
+
+
+data manytomany;
+set adm;
+do i=1 to n;
+set ins (rename=(id=id1)) nobs=n point=i;
+if id=id1 then output;
+end;
+run;

@@ -1,0 +1,65 @@
+  /* Use of the merge statement, using the in condition for the merging*/                                                                                                            
+ 
+
+data test;                                                                                                                             
+
+
+                                                                                                                                        
+input pt visit ae $;                                                                                                                    
+                                                                                                                                        
+datalines;                                                                                                                              
+                                                                                                                                        
+001 1 headache                                                                                                                          
+001 1 kill                                                                                                                              
+001 2 pain                                                                                                                              
+001 3 knee                                                                                                                              
+002 1 tick                                                                                                                              
+                                                                                                                                        
+;                                                                                                                                       
+run;                                                                                                                                    
+                                                                                                                                        
+                                                                                                                                        
+                                                                                                                                        
+data test1;                                                                                                                             
+input pt visit ae $;                                                                                                                    
+                                                                                                                                        
+datalines;                                                                                                                              
+                                                                                                                                        
+001 2 death  
+001 2 vomit                                                                                                                           
+002 1 hitch 
+003 1 ike                                                                                                                               
+                                                                                                                                        
+                                                                                                                                        
+;                                                                                                                                       
+                                                                                                                                        
+                                                                                                                                        
+run;                                                                                                                                    
+proc sort data= test out= test;                                                                                                         
+by pt;                                                                                                                                  
+run;                                                                                                                                    
+  proc sort data=test1 out=test1;                                                                                                       
+by pt;                                                                                                                                  
+run;                                                                                                                                    
+                                                                                                                                        
+data merged;                                                                                                                            
+                                                                                                                                        
+merge test(in=a) test1(in=b);                                                                                                           
+by pt;                                                                                                                                  
+if a ;                                                                                                                                  
+run;                                                                                                                                    
+                                                                                                                                        
+proc print data=merged noobs;                                                                                                                 
+run;
+
+
+
+                                                                                   The SAS System   23:56 Wednesday, September 15, 2010  20
+
+                                       pt    visit     ae
+
+                                        1      2      death
+                                        1      2      vomit
+                                        1      2      pain
+                                        1      3      knee
+                                        2      1      hitch

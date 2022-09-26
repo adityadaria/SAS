@@ -1,0 +1,17 @@
+*In order to slice more observations from the input data set, the POINT= option can be combined with a DO loop: ;
+
+
+
+data Out; 
+ do Slice=17, 1, 21, 17, 5, 6;  
+set sasuser.admit point=Slice; 
+output; 
+end; 
+stop; 
+run; 
+
+
+This code shows that the POINT= option can be used to access any observation, any number of times, in any order 
+from the input data set. This ability to randomly access the input data set can be applied in a number of ways to ease 
+programming chores. and, since the data is being randomly accessed (i.e. no end-of-file indicator is encountered), you must tell the DATA step when to 
+‘OUTPUT’ and when to ‘STOP’. 

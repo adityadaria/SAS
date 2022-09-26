@@ -1,0 +1,13 @@
+* The max and min age can also be obtained using the point and set;
+
+proc sort data=sasuser.admit out=x;
+by age;
+run;
+
+data max_min;
+do i=1,n;
+set x nobs=n point=i;
+output;
+end;
+stop;
+run;

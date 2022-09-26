@@ -1,0 +1,50 @@
+* Lets say the datasets have diff structure, one is having age as num and other as char, the SAS throws error and stops;
+
+
+data amit;
+input name $ age;
+datalines;
+amit 56
+cheeku 67
+ani 45
+nai 78
+;
+run;
+
+
+data amit1;
+input sirname $ age$;
+datalines;
+kin 67
+nin 78
+ben 71
+;
+run;
+
+data concaten;
+set amit amit1;
+run;
+
+proc print data=concaten;
+run;
+
+
+
+
+49
+50   data concaten;
+51   set amit amit1;
+ERROR: Variable age has been defined as both character and numeric.
+52   run;
+
+NOTE: The SAS System stopped processing this step because of errors.
+WARNING: The data set WORK.CONCATEN may be incomplete.  When this step was stopped there were 0 observations and 3 variables.
+WARNING: Data set WORK.CONCATEN was not replaced because this step was stopped.
+NOTE: DATA statement used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.01 seconds
+
+
+        0.01 seconds
+
+

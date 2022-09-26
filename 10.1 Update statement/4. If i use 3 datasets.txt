@@ -1,0 +1,47 @@
+**what would happen if I use 3 datasets for the merging purpose, it wont work, update works with 2 datasets only;
+
+data a;
+input id name $;
+cards;
+1 A
+2 B
+3 C
+;
+run;
+
+
+
+data b;
+input id name $3-4;
+cards;
+1 A
+2 BB
+3 
+;
+run;
+
+
+data c;
+input id name $3-4;
+cards;
+1 A
+2 BB
+3 
+4 FF
+;
+run;
+
+
+data d;
+update a b c;
+by id;
+run;
+
+
+
+197
+198  data d;
+199  update a b c;
+     ------
+     411
+ERROR 411-185: The UPDATE statement requires two data sets, too many data sets have been specified.

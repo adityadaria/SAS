@@ -1,0 +1,38 @@
+*The unique from 2 vars can be pulled out using some logic;
+
+data a;
+input name$ age;
+datalines;
+am 2    
+am 3    
+am 3 
+am 3   
+an 3    
+an 7    
+ka 7 
+ka 7   
+ka 8    
+sa 2    
+;
+run;
+
+proc sort data=a;
+by name age;
+run;
+
+data un_2var;
+set a;
+by name age;
+if first.name=1 and  first.age=1 and last.name=1 and last.age=1 then output un_2var;
+run;
+
+proc print data=un_2var;
+run;
+
+
+
+                                                            The SAS System                          17:59 Monday, January 26, 2011   1
+
+                                                          Obs    name    age
+
+                                                           1      sa      2

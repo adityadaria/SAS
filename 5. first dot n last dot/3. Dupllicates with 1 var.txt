@@ -1,0 +1,44 @@
+*The duplicates would not have first. and last. equal, so you can pull out these duplicates using this logic, note sa does not come in the output.
+
+
+data a;
+input name$ ;
+datalines ;
+am     
+am     
+am     
+an     
+an     
+ka     
+ka     
+sa   
+;
+run;
+
+proc sort data=a;
+by name;
+run;
+
+data dup;
+set a;
+by name;
+if first.name ne last.name then output dup;
+run;
+
+
+proc print data=dup;
+run;
+
+
+
+
+                                                            The SAS System                          17:19 Monday, January 26, 2011   4
+
+                                                             Obs    name
+
+                                                              1      am
+                                                              2      am
+                                                              3      an
+                                                              4      an
+                                                              5      ka
+                                                              6      ka

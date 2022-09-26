@@ -1,0 +1,39 @@
+1. One to One merging: In one to one merging there is no by statement and the merging is done 
+by SAS itself eg leading to the formation of cartesian product.
+
+data one_two;
+merge one two;
+run;
+
+
+2. Match merge: The match merge in data step always have the by variable and the datasets are sorted by
+that by variable. eg.This is the reason a match merge is also called as a BY Merge.
+
+BY VAR:
+1. The by variable can be char or num.
+2. The by var should be unique for a record for the merging to be good.
+3. The length of the by var should be same in both the datasets to avoid truncation, the length of the var would be defined by the first dataset.
+
+The BY variable has two attributes
+1. The By Value
+2. The BY group
+
+THE MATCH MERGE ALSO DEPEND ON THE DATASET ORDER IN THE MERGE STATEMENT, THE VALUES OF THE SECOND DATASET ALWAYS REPLACES 
+THE VALUES OF THE FIRST ONE.
+
+The MATCH MERGE can be of the following types:
+
+1) zero-to-one
+2) one-to-zero
+3) one-to-one
+4) one-to-many
+5) many-to-one
+6) few-to-many
+7) many-to-few
+8) many-to-many
+
+data one_two;
+merge one two;
+by id;
+run;
+

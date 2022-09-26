@@ -1,0 +1,17 @@
+                                                                                                                                     
+/* creating a dataset to a library*/                                                                                                    
+                                                                                                                                        
+libname mylib 'C:\cheeku';                                                                                                              
+                                                                                                                                        
+data mylib.test;                                                                                                                        
+                                                                                                                                        
+filename myfil 'C:\cheeku\1.txt';                                                                                                       
+infile myfil;                                                                                                                           
+                                                                                                                                        
+                                                                                                                                        
+input name$ marks age;                                                                                                                  
+                                                                                                                                        
+run;                                                                                                                                    
+                                                                                                                                        
+proc print data=mylib.test;                                                                                                             
+run; 

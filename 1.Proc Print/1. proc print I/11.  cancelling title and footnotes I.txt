@@ -1,0 +1,18 @@
+* The use of another title statement in the listing output, in the second program title2 replaces both the title2 of the first program;
+
+title1 'my first sasprogram';
+title2 'isnt it great';
+proc print data=sasuser.admit;
+var age sex height fee name;
+where name ? 'er';
+sum fee ;
+run;
+
+title2 'just checking';
+
+proc print data=sasuser.admit;
+var age sex height fee name;
+where name ? 'er';
+sum fee ;
+run;
+

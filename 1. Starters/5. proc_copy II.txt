@@ -1,0 +1,11 @@
+* proc copy is one of the procedure that only generates log message;
+
+proc copy in= act out= work memtype=all;                                                                                                
+select admit;                                                                                                                           
+run;
+
+*OR, defining memtype is not always compulsory;
+
+proc copy in= act out= work memtype=data;                                                                                                
+select admit;                                                                                                                           
+run;

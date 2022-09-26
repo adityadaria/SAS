@@ -1,0 +1,56 @@
+*A one to many type of merge is the one having one obs in the first dataset
+compared to the next dataset,it could be a 1-5 merge or a 1-7 and so on, basicall (y>x=1),
+the last obs in the first dataset keeps on replicating y-x times, if the values are overlapping then
+the values are always replaced by the second var;
+*The following is the example;
+
+data a;
+input id val na;
+datalines;
+1 56 21
+2 36 32
+;
+run;
+
+data b;
+input id na;
+datalines;
+1 478
+1 300
+1 523
+1 326
+1 547
+2 562
+2 985
+2 756
+2 786
+;
+run;
+
+data ab;
+merge a b;
+by id;
+run;
+
+proc print data=ab noobs;
+run;
+
+
+**********PLZ CHECK THE OUTPUT************;
+*the fisrt values 478 replaces the first na value 21;
+
+
+
+                                          The SAS System    04:50 Thursday, September 16, 2010   9
+
+                                         id    val     na
+
+                                          1     56    478
+                                          1     56    300
+                                          1     56    523
+                                          1     56    326
+                                          1     56    547
+                                          2     36    562
+                                          2     36    985
+                                          2     36    756
+                                          2     36    786

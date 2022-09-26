@@ -1,0 +1,6 @@
+* the end option is used to read the last record of a dataset;
+
+data amit;
+set sasuser.admit end=last;
+if last;
+run;

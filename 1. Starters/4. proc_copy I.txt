@@ -1,0 +1,23 @@
+                                                                                                                                        
+/* creating a dataset to a library and using a proc copy*/                                                                                                    
+                                                                                                                                        
+libname mylib 'C:\cheeku';                                                                                                              
+                                                                                                                                        
+data mylib.test;                                                                                                                        
+                                                                                                                                        
+filename myfil 'C:\cheeku\1.txt';                                                                                                       
+infile myfil;                                                                                                                           
+                                                                                                                                        
+                                                                                                                                        
+input name$ marks age;                                                                                                                  
+                                                                                                                                        
+run;                                                                                                                                    
+                                                                                                                                        
+proc print data=mylib.test;                                                                                                             
+run;                                                                                                                                    
+                                                                                                                                        
+                                                                                                                                        
+proc copy in=mylib out=work;                                                                                                            
+                                                                                                                                        
+select test;                                                                                                                            
+run;

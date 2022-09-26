@@ -1,0 +1,31 @@
+*The concept of first and last dot variable comes in effect when you use a variable for sorting, forming the by group varaibles, if you sort by two vars still the concept of the first. and last. still remains the same;
+
+
+data a;
+input name$ age;
+datalnes;
+
+
+        
+am 2    
+am 3    
+am 3    
+an 3    
+an 7    
+ka 7    
+ka 8    
+sa 2    
+;
+run;
+
+proc sort data=a;
+by name age;
+run;
+
+data a1 a2;
+set a;
+by name age;
+if first.name then output a1;
+if first.age then output a2;
+run;
+

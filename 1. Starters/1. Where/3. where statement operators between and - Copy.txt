@@ -1,0 +1,11 @@
+**The sql where operators can be used in data step as well**;
+Data a;
+set sasuser.admit;
+where age between 30 and 45;
+run;
+
+
+Data a;
+set sasuser.admit (where =(age between 30 and 45));
+where sex="M";
+run;

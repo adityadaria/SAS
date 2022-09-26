@@ -1,0 +1,7 @@
+**The sql where operators can be used in data step as well, you have to use the symbol only**;
+Data a;
+set sasuser.admit;
+where actlevel =* "HIG";
+run;
+
+

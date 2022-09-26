@@ -1,0 +1,46 @@
+The most straightforward differences are as follows:
+ •
+ The UPDATE statement uses only two data sets. The number of data sets that the MERGE statement can use is limited only by machine-dependent factors such as memory and disk space.
+ 
+•
+ A BY statement must accompany an UPDATE statement. The MERGE statement performs a one-to-one merge if no BY statement follows it.
+ 
+•
+ The two statements also process observations differently when a data set contains missing values or multiple observations in a BY group.
+
+
+**here merge and update produce diff results, merge would lead to missing value for ID 3, while update would let the value of id 3 as C ;
+
+
+data a;
+input id name $;
+cards;
+1 A
+2 B
+3 C
+;
+run;
+
+
+
+data b;
+input id name $3-4;
+cards;
+1 A
+2 BB
+3 
+;
+run;
+
+
+data c;
+merge a b;
+by id;
+run;
+
+
+data d;
+update a b;
+by id;
+run;
+

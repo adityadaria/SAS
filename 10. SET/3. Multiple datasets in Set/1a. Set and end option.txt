@@ -1,0 +1,43 @@
+* The set gives a good opportunity of counting no of observations using eof marker;
+
+data x;
+set sasuser.admit (keep=name) end=a ;
+if a then do;
+call symputx('obs', _n_);
+count=_n_;
+end;
+run;
+
+%put _user_;
+
+
+proc print data=x;
+run;
+
+
+
+                                                          The SAS System                       20:36 Tuesday, October 26, 2011   3
+
+                                                  Obs    Name              count
+
+                                                    1    Murray, W            .
+                                                    2    Almers, C            .
+                                                    3    Bonaventure, T       .
+                                                    4    Johnson, R           .
+                                                    5    LaMance, K           .
+                                                    6    Jones, M             .
+                                                    7    Reberson, P          .
+                                                    8    King, E              .
+                                                    9    Pitts, D             .
+                                                   10    Eberhardt, S         .
+                                                   11    Nunnelly, A          .
+                                                   12    Oberon, M            .
+                                                   13    Peterson, V          .
+                                                   14    Quigley, M           .
+                                                   15    Cameron, L           .
+                                                   16    Underwood, K         .
+                                                   17    Takahashi, Y         .
+                                                   18    Derber, B            .
+                                                   19    Ivan, H              .
+                                                   20    Wilcox, E            .
+                                                   21    Warren, C           21

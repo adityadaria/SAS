@@ -1,0 +1,28 @@
+**The sql where operators can be used in data step as well, the same and is used to repeat the where condition, here using same has repeated the first condition**;
+
+
+Data a;
+set sasuser.admit;
+where age <40;
+where same and age>22;
+run;
+
+
+106  **The sql where operators can be used in data step as well, the same and is used to repeat the where condition**;
+107
+108
+109  Data a;
+110  set sasuser.admit;
+111  where age <40;
+112  where same and age>22;
+NOTE: Where clause has been augmented.
+113  run;
+
+NOTE: There were 10 observations read from the data set SASUSER.ADMIT.
+      WHERE (age>22 and age<40);
+NOTE: The data set WORK.A has 10 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+

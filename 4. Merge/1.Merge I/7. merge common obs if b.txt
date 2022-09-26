@@ -1,0 +1,58 @@
+/* Use of the merge, the if b condition makes the second dataset as the parent, thus the final output is dataset B only*/                                                                                                              
+ 
+data test;                                                                                                                             
+                                                                                                                                        
+input name $ marks age;                                                                                                                 
+                                                                                                                                        
+datalines;                                                                                                                              
+                                                                                                                                        
+a 290 50                                                                                                                             
+preeti 230 98                                                                                                                           
+ajay 789 38                                                                                                                             
+;                                                                                                                                       
+run;                                                                                                                                    
+                                                                                                                                        
+                                                                                                                                   
+                                                                                                                                                                                                                                                         
+data test1;                                                                                                                             
+                                                                                                                                        
+input name $ marks age blood $;                                                                                                         
+                                                                                                                                        
+datalines;                                                                                                                              
+                                                                                                                                        
+a 12 66  a                                                                                                                              
+b 13 77   b                                                                                                                             
+y 16 55    ab                                                                                                                           
+z  14 88     o                                                                                                                          
+;                                                                                                                                       
+                                                                                                                                        
+run;          
+proc sort data= test out= test;                                                                                                                         
+by name;
+run;                              
+  proc sort data=test1 out=test1;
+by name;
+run;
+                                                                                                                                                                                                                                             
+data merged;                                                                                                                            
+                                                                                                                                        
+merge test(in=a) test1(in=b);                                                                                                                       
+by name; 
+if b;                                                                                                                               
+run;
+
+proc print data=merged;
+run;
+
+
+
+
+                                          The SAS System   23:56 Wednesday, September 15, 2010  17
+
+                               Obs    name    marks    age    blood
+
+                                1      a        12      66     a
+                                2      b        13      77     b
+                                3      y        16      55     ab
+                                4      z        14      88     o
+s

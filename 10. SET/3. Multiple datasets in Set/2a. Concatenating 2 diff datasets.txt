@@ -1,0 +1,42 @@
+* Lets say the datasets have diff structure, if the vars are not common then the datasets are appended just like that;
+
+
+data amit;
+input name $ age;
+datalines;
+amit 56
+cheeku 67
+ani 45
+nai 78
+;
+run;
+
+
+data amit1;
+input sirname $ marks;
+datalines;
+kin 67
+nin 78
+ben 71
+;
+run;
+
+data concaten;
+set amit amit1;
+run;
+
+proc print data=concaten;
+run;
+
+
+                                                          The SAS System                       19:26 Tuesday, October 26, 2011   1
+
+                                             Obs    name      age    sirname    marks
+
+                                              1     amit       56                  .
+                                              2     cheeku     67                  .
+                                              3     ani        45                  .
+                                              4     nai        78                  .
+                                              5                 .      kin        67
+                                              6                 .      nin        78
+                                              7                 .      ben        71

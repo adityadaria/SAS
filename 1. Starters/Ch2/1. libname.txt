@@ -1,0 +1,8 @@
+* the libname statement assigns the library reff, the sas log shows the version of sas engine and 
+a message that library is succesfully assigned;
+
+2    libname am "D:\amit";
+NOTE: Libref AM was successfully assigned as follows:
+      Engine:        V9
+      Physical Name: D:\amit
+

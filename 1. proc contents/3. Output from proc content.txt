@@ -1,0 +1,90 @@
+* The output from a proc content can be obtained using the out keyword and if you do not want the print out use the noprint statement, it is similar to proc sql dictionary.columns;
+
+proc contents data=sasuser.admit noprint out=admit;run; 
+
+
+******The contents of admit are****;
+                                                            The SAS System                            08:14 Monday, March 22, 2011   4
+
+                                                        The CONTENTS Procedure
+
+                         Data Set Name        WORK.X                                Observations          9
+                         Member Type          DATA                                  Variables             40
+                         Engine               V9                                    Indexes               0
+                         Created              Monday, March 22, 2004 08:35:01 AM    Observation Length    888
+                         Last Modified        Monday, March 22, 2004 08:35:01 AM    Deleted Observations  0
+                         Protection                                                 Compressed            NO
+                         Data Set Type                                              Sorted                YES
+                         Label
+                         Data Representation  WINDOWS_32
+                         Encoding             wlatin1  Western (Windows)
+
+
+                                                  Engine/Host Dependent Information
+
+                  Data Set Page Size          16384
+                  Number of Data Set Pages    1
+                  First Data Page             1
+                  Max Obs per Page            18
+                  Obs in First Data Page      9
+                  Number of Data Set Repairs  0
+                  File Name                   C:\DOCUME~1\Amit\LOCALS~1\Temp\SAS Temporary Files\_TD3028\x.sas7bdat
+                  Release Created             9.0101M3
+                  Host Created                XP_PRO
+
+                                                            The SAS System                            08:14 Monday, March 22, 2011   5
+
+                                                        The CONTENTS Procedure
+
+                                                     Variables in Creation Order
+
+                        #    Variable    Type    Len    Format         Label
+
+                        1    LIBNAME     Char      8                   Library Name
+                        2    MEMNAME     Char     32                   Library Member Name
+                        3    MEMLABEL    Char    256                   Data Set Label
+                        4    TYPEMEM     Char      8                   Special Data Set Type (From TYPE=)
+                        5    NAME        Char     32                   Variable Name
+                        6    TYPE        Num       8                   Variable Type
+                        7    LENGTH      Num       8                   Variable Length
+                        8    VARNUM      Num       8                   Variable Number
+                        9    LABEL       Char    256                   Variable Label
+                       10    FORMAT      Char     32                   Variable Format
+                       11    FORMATL     Num       8                   Format Length
+                       12    FORMATD     Num       8                   Number of Format Decimals
+                       13    INFORMAT    Char     32                   Variable Informat
+                       14    INFORML     Num       8                   Informat Length
+                       15    INFORMD     Num       8                   Number of Informat Decimals
+                       16    JUST        Num       8                   Justification
+                       17    NPOS        Num       8                   Position in Buffer
+                       18    NOBS        Num       8                   Observations in Data Set
+                       19    ENGINE      Char      8                   Engine Name
+                       20    CRDATE      Num       8    DATETIME16.    Create Date
+                       21    MODATE      Num       8    DATETIME16.    Last Modified Date
+                       22    DELOBS      Num       8                   Deleted Observations in Data Set
+                       23    IDXUSAGE    Char      9                   Use of Variable in Indexes
+                       24    MEMTYPE     Char      8                   Library Member Type
+                       25    IDXCOUNT    Num       8                   Number of Indexes for Data Set
+                       26    PROTECT     Char      3                   Password Protection (Read Write Alter)
+                       27    FLAGS       Char      3                   Update Flags (Protect Contribute Add)
+                       28    COMPRESS    Char      8                   Compression Routine
+                       29    REUSE       Char      3                   Reuse Space
+                       30    SORTED      Num       8                   Sorted and/or Validated
+                       31    SORTEDBY    Num       8                   Position of Variable in Sortedby Clause
+                       32    CHARSET     Char      8                   Host Character Set
+                       33    COLLATE     Char      8                   Collating Sequence
+                       34    NODUPKEY    Char      3                   Sort Option: No Duplicate Keys
+                       35    NODUPREC    Char      3                   Sort Option: No Duplicate Records
+                       36    ENCRYPT     Char      8                   Encryption Routine
+                       37    POINTOBS    Char      3                   Point to Observations
+                       38    GENMAX      Num       8                   Maximum Number of Generations
+                       39    GENNUM      Num       8                   Generation Number
+                       40    GENNEXT     Num       8                   Next Generation Number
+
+
+                                                           Sort Information
+
+                                                    Sortedby       LIBNAME MEMNAME
+                                                    Validated      YES
+                                                    Character Set  ANSI
+

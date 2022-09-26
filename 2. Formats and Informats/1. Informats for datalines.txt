@@ -1,0 +1,9 @@
+data a;
+input fee dollar7.2;
+datalines;
+$50000.0   
+$4200.2    
+$75411.23  
+; 
+run;
+ 

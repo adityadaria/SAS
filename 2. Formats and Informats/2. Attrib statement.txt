@@ -1,0 +1,5 @@
+data b;                                                                                                                                 
+set a;                                                                                                                                  
+attrib feedollar format= dollar9.2;                                                                                                     
+feedollar=fee;                                                                                                                          
+run;

@@ -1,0 +1,21 @@
+* The point option can be used for slicing and dicing a dataset, in first case the x would have only 17th observation;
+
+data x;
+Slice=17;
+set sasuser.admit point=Slice;
+output;
+stop;
+run;
+
+
+
+
+* The x would have 17th 1th till 6th observation;
+
+data x;
+do Slice=17, 1, 8, 13, 5, 6;
+set sasuser.admit point=Slice;
+output;
+end;
+stop;
+run;

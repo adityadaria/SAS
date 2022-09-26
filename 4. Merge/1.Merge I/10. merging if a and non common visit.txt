@@ -1,0 +1,65 @@
+data test;                                                                                                                             
+
+
+input pt visit ae $;                                                                                                                    
+                                                                                                                                        
+datalines;                                                                                                                              
+                                                                                                                                        
+001 1 headache                                                                                                                          
+001 2 kill                                                                                                                              
+001 3 pain                                                                                                                              
+001 4 knee                                                                                                                              
+002 1 tick
+003 2 flee                                                                                                                              
+                                                                                                                                        
+;                                                                                                                                       
+run;                                                                                                                                    
+                                                                                                                                        
+                                                                                                                                        
+                                                                                                                                        
+data test1;                                                                                                                             
+input pt visit ae $;                                                                                                                    
+                                                                                                                                        
+datalines;                                                                                                                              
+                                                                                                                                        
+001 5 death  
+001 6 vomit                                                                                                                           
+002 2 hitch 
+003 1 ike                                                                                                                               
+                                                                                                                                        
+                                                                                                                                        
+;                                                                                                                                       
+ 	
+
+proc sort data= test out= test;                                                                                                         
+by pt visit;                                                                                                                                  
+run;                                                                                                                                    
+
+proc sort data=test1 out=test1;                                                                                                       
+by pt visit;                                                                                                                                  
+run;                                                                                                                                    
+           
+data merged;
+merge test(in=a) test1(in=b);
+by pt visit;
+if a;
+run;
+
+  
+  
+
+proc print data=merged;
+run;
+
+
+                                                                                                               The SAS System   23:56 Wednesday, September 15, 2010  23
+
+                                  Obs    pt    visit    ae
+
+                                   1      1      1      headache
+                                   2      1      2      kill
+                                   3      1      3      pain
+                                   4      1      4      knee
+                                   5      2      1      tick
+                                   6      3      2      flee
+            

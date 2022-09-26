@@ -1,0 +1,36 @@
+
+*using the noobs;                                                                                                           
+                                                                                                                                        
+                                                                                                                                        
+ data test;                                                                                                                             
+input name $ marks age;                                                                                                                 
+datalines;                                                                                                                              
+amit 390 56                                                                                                                             
+neha 345 56                                                                                                                             
+sonu 567 78                                                                                                                             
+;                                                                                                                                       
+run;                                                                                                                                    
+                                                                                                                                        
+proc print data=test noobs;                                                                                                             
+run;
+
+
+
+
+
+*********************************************************************
+
+* using the no obs;                                                                                                           
+                                                                                                                                        
+                                                                                                                                        
+ data test;                                                                                                                             
+input name $ marks age;                                                                                                                 
+datalines;                                                                                                                              
+amit 390 56                                                                                                                             
+neha 345 56                                                                                                                             
+sonu 567 78                                                                                                                             
+;                                                                                                                                       
+run;                                                                                                                                    
+                                                                                                                                        
+proc print data=test no obs;                                                                                                            
+run; 

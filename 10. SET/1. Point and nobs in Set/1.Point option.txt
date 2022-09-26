@@ -1,0 +1,11 @@
+* The point option is basically a pointer to read the nth observation in a dataset, always used with the
+set option and the point needs the reference to the temporary variables, could not be harcoded;
+
+data amit;
+obsnum=5;    /*to pick the 5th obs*/
+set sasuser.admit point=obsnum;
+output;  /* for printing the obs*/
+stop;  /* to give signal to sas the end of data step, for avoid infinite looping*/
+run;
+
+

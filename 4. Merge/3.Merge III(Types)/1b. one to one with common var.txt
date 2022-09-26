@@ -1,0 +1,39 @@
+* If you merge two datasets with a common variable, then the one to one merging is done with
+the observation location, the first obs of first dataset is combined with the first obs of the 
+second dataset and so on, the common var values are overwritten from the dataset b, here value 2 of pid from b replaces value 1 from a;
+
+data a;
+input pid val;
+datalines;
+1 5
+;
+run;
+data b;
+input pid na;
+datalines;
+2 478
+1 300
+1 523
+1 326
+1 547
+2 35
+3 58
+;
+run;
+
+data ab;
+merge a b;
+run;
+
+proc print data=ab noobs;
+run;                                                            The SAS System                       07:18 Saturday, December 18, 2010   1
+
+                                                          pid    val     na
+
+                                                           2      5     478
+                                                           1      .     300
+                                                           1      .     523
+                                                           1      .     326
+                                                           1      .     547
+                                                           2      .      35
+                                                           3      .      58

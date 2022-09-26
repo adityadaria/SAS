@@ -1,0 +1,30 @@
+**the where statement is the regular statement that we use**;
+
+
+Data a;
+set sasuser.admit;
+where age gt 40;
+run;
+
+**If you use where option and statement the SAS would ignore the statement;
+
+Data a;
+set sasuser.admit (where=(sex="M"));
+where age gt 40;
+run;
+
+
+5    Data a;
+6    set sasuser.admit (where=(sex="M"));
+7    where age gt 40;
+WARNING: The WHERE statement cannot be applied to a data set on the last SET/MERGE/UPDATE/MODIFY statement.  Either the data sets
+         listed failed with open errors or they already specify a WHERE data set option.
+8    run;
+
+NOTE: There were 10 observations read from the data set SASUSER.ADMIT.
+      WHERE sex='M';
+NOTE: The data set WORK.A has 10 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.11 seconds
+      cpu time            0.01 seconds
+

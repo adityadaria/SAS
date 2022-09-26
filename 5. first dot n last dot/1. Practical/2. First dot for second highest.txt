@@ -1,0 +1,30 @@
+*First. and last. concept to pick second highest from a grouped data;                                                                   
+                                                                                                                                        
+data a;                                                                                                                                 
+input id marks;                                                                                                                         
+datalines;                                                                                                                              
+1 10                                                                                                                                    
+1 12                                                                                                                                    
+1 08                                                                                                                                    
+1 9                                                                                                                                     
+2 10                                                                                                                                    
+2 4                                                                                                                                     
+2 5                                                                                                                                     
+;                                                                                                                                       
+run;                                                                                                                                    
+                                                                                                                                        
+proc sort data=a;                                                                                                                       
+by id marks;                                                                                                                            
+run;                                                                                                                                    
+                                                                                                                                        
+data b;                                                                                                                                 
+set a;                                                                                                                                  
+by id marks;                                                                                                                            
+if first.id then x=0;                                                                                                                   
+x+1;                                                                                                                                    
+if x=2;                                                                                                                                 
+drop x;                                                                                                                                 
+run;                                                                                                                                    
+                                                                                                                                        
+proc print;                                                                                                                             
+run;

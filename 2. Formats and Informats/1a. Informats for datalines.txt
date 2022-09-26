@@ -1,0 +1,10 @@
+data x;                                                                                                                                 
+input date date9.;                                                                                                                      
+datalines;                                                                                                                              
+13oct1981                                                                                                                               
+14oct1981                                                                                                                               
+12nov1984                                                                                                                               
+; run;                                                                                                                                  
+data y;                                                                                                                                 
+set x;                                                                                                                                  
+datefinal=put(date,date9.); run;

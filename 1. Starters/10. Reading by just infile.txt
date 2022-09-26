@@ -1,0 +1,6 @@
+* A external file could be read by just using the infile statement, thus the filename statement could be avoided;
+
+data x;                                                                                                                                 
+infile 'D:\amit\12.txt' ;                                                                                                               
+input name $ age;                                                                                                                       
+run;

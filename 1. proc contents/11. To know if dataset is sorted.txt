@@ -1,0 +1,50 @@
+* Just keep the variable sorted in the output, you can even apply format on the variable value;
+
+
+proc format lib=work;                                                                                                                   
+value sort                                                                                                                              
+1='Yes sorted'                                                                                                                          
+other='NOt sorted';  
+
+value sortedby
+1='sorting var'
+other='not sorting var';
+run;                                                                                                                                    
+
+proc sort data=sasuser.admit out=s; by id; run;
+                                                                                                                                        
+proc contents data=s out =s_contents  (keep=sorted sortedby) noprint; run;                                                                       
+                                                                                                                                    
+data final ;                                                                                                               
+set s_contents;                                                                                                                         
+new=put(sorted,sort.);
+new1=put(sortedby,sortedby.);
+run;
+
+proc print data=final;
+run;
+
+
+***********also*************************;
+
+proc format;                                                                                                                            
+value sort                                                                                                                              
+1='sorted hai bhai'                                                                                                                     
+other='Note sorted :(';                                                                                                                 
+                                                                                                                                        
+value sortby                                                                                                                            
+1='thats the var'                                                                                                                       
+other='.';                                                                                                                              
+run;                                                                                                                                    
+                                                                                                                                        
+proc sort data=sasuser.admit out=x;                                                                                                     
+by id;                                                                                                                                  
+run;                                                                                                                                    
+                                                                                                                                        
+proc contents data=x out=xx (keep=name sorted sortedby);                                                                                
+run;                                                                                                                                    
+                                                                                                                                        
+proc print data=xx;                                                                                                                     
+format sorted sort.;                                                                                                                    
+format sortedby sortby.;                                                                                                                
+run;

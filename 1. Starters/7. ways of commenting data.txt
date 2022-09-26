@@ -1,0 +1,10 @@
+/*ways of commenting data*/                                                                                                             
+                                                                                                                                        
+*Data amit; /*1 begin with star and end with a semicolon*/                                                                              
+*run;                                                                                                                                    
+                                                                                                                                        
+                                                                                                                                        
+/*proc print data=amit;*/  /*2 semicolon and star follwed by the same for closing*/                                                     
+                                                                                                                                        
+                                                                                                                                        
+run;

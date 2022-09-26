@@ -1,0 +1,20 @@
+* A sas engine is a set of internal instructions that sas uses for writing to and reading from files in as sas library, you can use engine from 9 to 6;
+
+
+syntax is as follows
+
+libname libref engine "path";
+
+
+libname am v8 "D:\amit";
+
+
+
+4    libname am v8 "D:\amit";
+NOTE: Libref AM was successfully assigned as follows:
+      Engine:        V8
+      Physical Name: D:\amit
+
+
+
+libname am v7 "D:\amit";

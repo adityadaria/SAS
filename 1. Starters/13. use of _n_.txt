@@ -1,0 +1,16 @@
+* The _n_ is used to read the no if iterations sas undergoes before reading the whole dataset;
+
+data test;
+set sasuser.admit;
+if _n_<=10;
+run;
+
+
+
+
+*ALSO;
+
+data test;
+set sasuser.admit;
+if _n_<=10 then output;
+run;

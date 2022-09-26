@@ -1,0 +1,28 @@
+**what would happen if I overwrite the master table here, it works fine and the master gets updated by new values;
+
+data a;
+input id name $;
+cards;
+1 A
+2 B
+3 C
+;
+run;
+
+
+
+data b;
+input id name $3-4;
+cards;
+1 A
+2 BB
+3 LL
+;
+run;
+
+
+data a;
+update a b;
+by id;
+run;
+

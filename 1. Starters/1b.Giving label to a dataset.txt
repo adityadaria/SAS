@@ -1,0 +1,9 @@
+* The dataset could be gived a label using proc datasets;
+
+data a;
+set sasuser.admit;
+run;
+
+proc datasets lib=work;
+modify a (label='Copy of admit dataset');
+run;

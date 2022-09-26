@@ -1,0 +1,30 @@
+* Rules for naming datasets;
+1. 1 to 32 character long
+2. can begin with a-z (upper case or lower case) or an _
+3. can follow any combination of letters,numbers and _
+4. no special characters can be included eg. @,#,$
+
+
+
+* Rules for naming variables;
+1. 1 to 32 character long
+2. can begin with a-z (upper case or lower case) or an _
+3. can follow any combination of letters,numbers and _
+4. no special characters can be included eg. @,#,$
+5. A character var can hold up to 32,767 bytes or 32 KB of data or 64,000 bytes or 64 KB of data. 
+
+
+
+
+* Rules for a label;
+1. it can be upto 256 characters long
+2. can follow any combination of letters,numbers and _
+
+
+
+
+
+* Rules for a naming library;
+1. it can be upto 8 characters long
+2. should begin with a letter or _ and NOT with a number
+3. can follow any combination of letters,numbers and _

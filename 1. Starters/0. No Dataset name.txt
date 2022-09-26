@@ -1,0 +1,8 @@
+* If you do not give a data set name then sas creates the data1,2,3 and so on by default;
+
+
+data;
+run;
+
+data;
+run;

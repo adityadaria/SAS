@@ -1,0 +1,56 @@
+Details 
+
+
+Use the WHERE= data set option with an input data set to select observations that meet the condition specified in the WHERE expression before SAS brings them into the DATA or PROC step for processing. Selecting observations that meet the conditions of the WHERE expression is the first operation SAS performs in each iteration of the DATA step. 
+You can also select observations that are written to an output data set. In general, selecting observations at the point of input is more efficient than selecting them at the point of output; however, there are some cases when selecting observations at the point of input is not practical or not possible.
+
+
+You cannot use the WHERE= data set option with options that select observations by observation number, such as the FIRSTOBS= and OBS= data set options and the POINT= option in the SET and MODIFY statements.
+
+If you use both the WHERE= data set option and the WHERE statement in the same DATA step, SAS ignores the WHERE statement for data sets with the WHERE= data set option. However, you can use the WHERE= data set option with the WHERE command in SAS/FSP software.
+
+Note:   Using indexed SAS data sets can improve performance significantly when you are using WHERE expressions to access a subset of the observations in a SAS data set. See "SAS Indexes" in "SAS Data Files" in SAS Language Reference: Concepts for a complete discussion of WHERE expression processing with indexed data sets and a list of guidelines to consider before indexing your SAS data sets.  
+
+
+
+--------------------------------------------------------------------------------
+ 
+Comparisons 
+
+
+
+
+The WHERE statement applies to all input data sets, whereas the WHERE= data set option selects observations only from the data set for which it is specified.
+
+Do not confuse the purpose of the WHERE= data set option. The DROP= and KEEP= data set options select variables for processing, while the WHERE= data set option selects observations.
+
+
+--------------------------------------------------------------------------------
+ 
+Examples 
+
+
+
+Example 1: Selecting Observations from an Input Data Set 
+This example uses the WHERE= data set option to subset the SALES data set as it is read into another data set: 
+
+data whizmo;
+   set sales(where=(product='whizmo'));
+run;
+
+
+Example 2: Selecting Observations from an Output Data Set 
+This example uses the WHERE= data set option to subset the SALES output data set: 
+
+data whizmo(where=(product='whizmo'));
+   set sales;
+run;
+
+
+
+
+***where could be used as an option**;
+
+data a;
+set sasuser.admit(where=(sex="M"));
+run;

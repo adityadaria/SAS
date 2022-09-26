@@ -1,0 +1,40 @@
+* Th SET By or interleaving cause the datasets to be set by the by variable, for commaon by var the obs are arranged one above other, the output have sum of both the datasets obs, it also needs the by var to be sorted in the input dataset;
+
+
+data amit;
+input name $ age;
+datalines;
+amit 56
+cheeku 67
+ani 45
+nai 78
+;
+run;
+
+
+data amit1;
+input name $ marks;
+datalines;
+amit 64
+cheeku 90
+kin 67
+nin 78
+ben 71
+;
+run;
+
+proc sort data=amit;
+by name;
+run;
+
+proc sort data=amit1;
+by name;
+run;
+
+
+
+data interlv;
+set amit amit1;
+by name;
+run;
+

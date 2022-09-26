@@ -1,0 +1,16 @@
+                                                                                                                                        
+/* Use of the datalines or the CARDS*/                                                                                                  
+ data test;                                                                                                                             
+                                                                                                                                        
+input name $ marks age;                                                                                                                 
+                                                                                                                                        
+datalines;                                                                                                                              
+                                                                                                                                        
+amit 290 50                                                                                                                             
+preeti 230 98                                                                                                                           
+ajay 789 38                                                                                                                             
+;                                                                                                                                       
+run;                                                                                                                                    
+                                                                                                                                        
+proc print data=test;                                                                                                                   
+run;

@@ -1,0 +1,37 @@
+* The drop or keep statement when used with the data keyword allows that var to be used for further processing,but the vars used in drop or keep are not available for processing;
+
+
+I.**Here we had dropped age and also used it for restricting the data;
+data amit(drop=age);
+set sasuser.admit;
+if age gt 30;
+run;
+
+
+
+
+
+II.* here the variable age is not initialized;
+
+data amit;
+set sasuser.admit (drop=age);
+if age gt 30;
+run;
+
+
+
+
+
+NOTE: Variable age is uninitialized.
+NOTE: There were 21 observations read from the data set SASUSER.ADMIT.
+NOTE: The data set WORK.AMIT has 0 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.03 seconds
+
+III. * here the age is used with the data keyword;
+
+data amit (drop=age);
+set sasuser.admit (drop=height name);
+if age gt 30;
+run;

@@ -1,0 +1,30 @@
+**The update statement in sas is used to update the master table from the transactional table, both tables should have a key and they should be sorted by it;
+
+
+
+data a;
+input id name $;
+cards;
+1 A
+2 B
+3 C
+;
+run;
+
+
+
+data b;
+input id name $;
+cards;
+1 A
+2 BB
+
+;
+run;
+
+
+data c;
+update a b;
+by id;
+run;
+

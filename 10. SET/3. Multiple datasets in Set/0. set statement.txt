@@ -1,0 +1,6 @@
+* The set statement helps in the copying of the dataset to the new one so that the original dataset is not
+altered;
+
+data amit;
+set sasuser.admit;
+run;

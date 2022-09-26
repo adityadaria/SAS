@@ -1,0 +1,41 @@
+*The unique values would have first. and last. equal, so you can pull out these uniques using this logic.
+
+
+data a;
+input name$ ;
+datalines ;  
+an     
+an     
+ka     
+ka     
+sa 
+sa 
+ra
+la 
+;
+run;
+
+proc sort data=a;
+by name;
+run;
+
+data unique;
+set a;
+by name;
+if first.name eq last.name then output unique;
+run;
+
+
+proc print data=unique;
+run;
+
+
+
+
+
+                                                            The SAS System                          17:26 Monday, January 26, 2011   4
+
+                                                             Obs    name
+
+                                                              1      la
+                                                              2      ra

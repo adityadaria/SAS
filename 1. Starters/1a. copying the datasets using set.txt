@@ -1,0 +1,18 @@
+                                                                                                                                        
+/* copying the datsets*/                                                                                                                 
+                                                                                                                                        
+data mylib.test1;                                                                                                                       
+set mylib.test;                                                                                                                         
+run;                                                                                                                                    
+                                                                                                                                        
+proc print data=mylib.test1;                                                                                                            
+run;
+
+
+************************************;
+
+data amit;
+set act.admit;
+run;
+proc print data=amit;
+run;

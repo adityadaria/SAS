@@ -1,0 +1,50 @@
+*A many to many type of merge is the one having same no of obs per By group in all the input datasets,
+it could be a 2-2 merge or a 3-3 or a 6-6 ans so on;
+*The following is the example;
+
+data a;
+input id val;
+datalines;
+1 56
+1 23
+2 36
+2 78
+;
+run;
+
+
+data b;
+input id na;
+datalines;
+1 478
+1 300
+2 562
+2 985
+;
+run;
+
+proc sort data=a out=a;
+by id;
+run;
+
+proc sort data=b out=b;
+by id;
+run;
+
+data ab;
+merge a b;
+by id;
+run;
+
+proc print data=ab noobs;
+run;
+
+
+                                          The SAS System    04:50 Thursday, September 16, 2010  11
+
+                                         id    val     na
+
+                                          1     56    478
+                                          1     23    300
+                                          2     36    562
+                                          2     78    985

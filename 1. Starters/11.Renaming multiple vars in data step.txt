@@ -1,0 +1,17 @@
+data a;
+input name $ age sex $;
+datalines;
+am 25 M
+pa 26 F
+;
+run;
+
+
+
+data b;
+set a;
+
+rename name=s
+       age=g
+       sex=k;
+run;

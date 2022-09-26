@@ -1,0 +1,45 @@
+* The set can be exploited to use the calculation of percent of every row;
+
+
+data x;
+input day $ spend;
+datalines;
+m 10
+t 20
+we 30
+th 40
+fr 50
+sa 60
+su 100
+; 
+run;
+
+
+data report;
+if _n_=1 then do until(flag=1);
+set x end=flag;
+tot+spend;
+end;
+
+set x;
+percent=spend/tot;
+run;
+
+proc print data=report;
+var day spend tot percent;
+format percent percent8.2;
+run;
+
+
+
+                                                          The SAS System                       20:36 Tuesday, October 26, 2011   4
+
+                                              Obs    day    spend    tot     percent
+
+                                               1     m        10     310      3.23%
+                                               2     t        20     310      6.45%
+                                               3     we       30     310      9.68%
+                                               4     th       40     310     12.90%
+                                               5     fr       50     310     16.13%
+                                               6     sa       60     310     19.35%
+                                               7     su      100     310     32.26%

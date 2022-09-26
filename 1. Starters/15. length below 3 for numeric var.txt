@@ -1,0 +1,31 @@
+* The length of the numeric variable can be between the 2-8 bytes, if you specify the numeric length as 1
+the SAS would throw an error;
+
+
+data a;
+length age 1.;
+
+age=200;
+run;
+
+
+64
+65   data a;
+66   length age 1.;
+                --
+                352
+ERROR 352-185: The length of numeric variables is 3-8.
+
+67
+68   age=200;
+69   run;
+
+NOTE: The SAS System stopped processing this step because of errors.
+WARNING: The data set WORK.A may be incomplete.  When this step was stopped there were 0
+         observations and 1 variables.
+WARNING: Data set WORK.A was not replaced because this step was stopped.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+
+
